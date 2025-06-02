@@ -1,0 +1,59 @@
+[project]
+name = "py-qt6-resource"
+version = "0.0.1"
+description = "Python Qt6 Resource management related"
+readme = "README.md"
+authors = [
+    { name = "Michael Cummings", email = "mgcummings@yahoo.com" }
+]
+maintainers = [
+    { name = " Michael Cummings", email = "mgcummings@yahoo.com" }
+]
+license = "MIT AND BSD-3-Clause"
+license-files = ["LICENSE_MIT.md", "LICENSE_BSD-3.md"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12"
+]
+requires-python = ">=3.12.10"
+dependencies = [
+    "option>=2.1.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.7.9"]
+build-backend = "uv_build"
+
+[tool-pytest.ini_options]
+minversion = "8.3"
+addopts = "--import-mode=importlib"
+pythonpath = ["."]
+qt_api = "pyside6"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+extend-select = ["E", "I", "N", "R", "W"]
+
+[tool.setuptools.package-data]
+"*" = [
+    "LICENSE_MIT.md",
+    "LICENSE_BSD-3.md"
+]
+
+
+[urls]
+Homepage = "https://github.com/Qt-Dragon-Lands/PyQt6Resource"
+Issues = "https://github.com/Qt-Dragon-Lands/PyQt6Resource/issues"
+Repository = "https://github.com/Qt-Dragon-Lands/PyQt6Resource.git"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "ruff>=0.11.12",
+]
